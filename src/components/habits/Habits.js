@@ -1,9 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Habits = () => {
+    const initialState = {
+        sleep: '',
+        water: '',
+        exercise: '',
+        calories: '',
+        learning: '',
+        earning: '',
+        spending: '',
+        travel: '',
+    }
+    const [formState, setFormState] = useState(initialState);
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		console.log(formState);
+		setFormState(initialState);
+	};
+	const handleChange = (event) => {
+		setFormState({ ...formState, [event.target.id]: event.target.value });
+	};
     return (
         <div>
             Habits
+            <form onSubmit={handleSubmit}>
+                <label htmlFor='sleep'>Enter amount of time for sleep: </label>
+                <input 
+                    id='sleep'
+                    onChange={handleChange}
+                    value={formState.sleep}
+                />
+                <label htmlFor='water'>Enter amount of water consumed: </label>
+                <input 
+                    id='water'
+                    onChange={handleChange}
+                    value={formState.water}
+                />
+                <label htmlFor='exercise'>Enter the amount of time for exercise: </label>
+                <input 
+                    id='exercise'
+                    onChange={handleChange}
+                    value={formState.exercise}
+                />
+                <label htmlFor='calories'>Enter the amount of calories consumed: </label>
+                <input 
+                    id='calories'
+                    onChange={handleChange}
+                    value={formState.calories}
+                />
+                <label htmlFor='learning'>Enter amount of time for learning: </label>
+                <input 
+                    id='learning'
+                    onChange={handleChange}
+                    value={formState.learning}
+                />
+                <label htmlFor='earning'>Enter amount of money earned: </label>
+                <input 
+                    id='earning'
+                    onChange={handleChange}
+                    value={formState.earning}
+                />
+                <label htmlFor='spending'>Enter amount of money spent: </label>
+                <input 
+                    id='spending'
+                    onChange={handleChange}
+                    value={formState.spending}
+                />
+                <label htmlFor='travel'>Enter the amount of time traveling: </label>
+                <input 
+                    id='travel'
+                    onChange={handleChange}
+                    value={formState.travel}
+                />
+                <button type='submit'>Submit</button>
+            </form>
         </div>
     );
 };
