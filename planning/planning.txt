@@ -1,0 +1,7 @@
+# Planning
+
+1. Add Components
+2. Add React Router
+3. Add Forms
+4. Connect to backend with axios
+5. Style
