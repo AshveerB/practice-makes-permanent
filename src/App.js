@@ -8,11 +8,13 @@ import Reflection from './components/reflection/Reflection';
 import Analysis from './components/analysis/Analysis';
 import Login from './components/login/Login';
 import Registration from './components/registration/Registration';
+import Header from './components/header/Header';
 import './App.css';
 
 function App() {
 	return (
 		<div className='App'>
+			<Header />
 			<Navigation />
 			<main>
 				<Route path='/home' exact component={Home} />

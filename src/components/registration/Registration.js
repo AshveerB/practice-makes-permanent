@@ -26,14 +26,17 @@ const Registration = () => {
 					onChange={handleChange}
 					value={formState.username}
 				/>
+				<br />
 				<label htmlFor='email'>Enter Email: </label>
 				<input id='email' onChange={handleChange} value={formState.email} />
+				<br />
 				<label htmlFor='password'>Enter Password: </label>
 				<input
 					id='password'
 					onChange={handleChange}
 					value={formState.password}
 				/>
+				<br />
 				<label htmlFor='passwordConfirm'>Confirm Password: </label>
 				<input
 					id='passwordConfirm'

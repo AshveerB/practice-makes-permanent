@@ -20,7 +20,7 @@ const Login = () => {
 			Login
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='email'>Enter Email: </label>
-				<input id='email' onChange={handleChange} value={formState.email} />
+				<input id='email' onChange={handleChange} value={formState.email} /> <br />
 				<label htmlFor='password'>Enter Password: </label>
 				<input
 					id='password'
