@@ -4,12 +4,21 @@
 
 A personal habit tracker that will enable user to make changes in their lives through small incremental changes.
 
+## Deployed App
+
+Deployed App
+
 ## Technologies Used
 
 1. React
 2. Django
 3. PostgreSQl
 4. Postman
+
+## Installation and Usage
+
+1. Fork and Clone
+2. Install Dependencies
 
 ## User Stories
 
@@ -39,7 +48,3 @@ A personal habit tracker that will enable user to make changes in their lives th
 ## Wire-Frames
 
 ![PMP2](https://media.git.generalassemb.ly/user/29407/files/d52fb880-3ab8-11eb-8ef1-80477b265845)
-
-## Deployed App
-
-Deployed App
