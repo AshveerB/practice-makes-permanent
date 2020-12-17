@@ -1,16 +1,27 @@
 import React, { useState } from 'react';
+import Axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 const Registration = () => {
 	const initialState = {
 		username: '',
 		email: '',
 		password: '',
-		passwordConfirm: '',
+		re_password: '',
 	};
 	const [formState, setFormState] = useState(initialState);
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		console.log(formState);
+		Axios({
+			url: 'http://localhost:8000/users/',
+			method: 'POST',
+			data: formState,
+		}).then((res) => {
+			console.log(res);
+		});
+		
+		<Redirect to='/login' />;
 		setFormState(initialState);
 	};
 	const handleChange = (event) => {
@@ -37,11 +48,11 @@ const Registration = () => {
 					value={formState.password}
 				/>
 				<br />
-				<label htmlFor='passwordConfirm'>Confirm Password: </label>
+				<label htmlFor='re_password'>Confirm Password: </label>
 				<input
-					id='passwordConfirm'
+					id='re_password'
 					onChange={handleChange}
-					value={formState.passwordConfirm}
+					value={formState.re_password}
 				/>
 				<button type='submit'>Submit</button>
 			</form>

@@ -1,6 +1,8 @@
+import Axios from 'axios';
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
-const Habits = () => {
+const Habits = ({ token }) => {
 	const initialState = {
 		sleep: '',
 		water: '',
@@ -15,6 +17,13 @@ const Habits = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		console.log(formState);
+		Axios({
+			url: 'http://localhost:8000/habits/',
+			method: 'POST',
+			headers: { Authorization: `Bearer ${token}` },
+			data: formState,
+		});	
+		<Redirect to='/habits' />
 		setFormState(initialState);
 	};
 	const handleChange = (event) => {

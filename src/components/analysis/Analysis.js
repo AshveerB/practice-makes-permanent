@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Analysis = () => {
+const Analysis = ({ token }) => {
     return (
         <div>
             Analysis

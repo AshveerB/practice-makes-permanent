@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import Navigation from './components/navigation/Navigation';
 import Home from './components/home/Home';
@@ -12,18 +12,49 @@ import Header from './components/header/Header';
 import './App.css';
 
 function App() {
+	const [token, setToken] = useState(null)
 	return (
 		<div className='App'>
 			<Header />
-			<Navigation />
+			<Navigation token={token} />
 			<main>
 				<Route path='/home' exact component={Home} />
 				<Route path='/' exact render={() => <Redirect to='/home' />} />
-				<Route path='/habits' component={Habits} />
-				<Route path='/goals' component={Goals} />
-				<Route path='/reflections' component={Reflection} />
-				<Route path='/analysis' component={Analysis} />
-				<Route path='/login' component={Login} />
+				<Route 
+					path='/habits'
+					exact
+					render={() => {
+						return <Habits token={token} />;
+					}}
+				/>
+				<Route 
+					path='/goals'
+					exact
+					render={() => {
+						return <Goals token={token} />;
+					}} 
+				/>
+				<Route 
+					path='/reflections'
+					exact
+					render={() => {
+						return <Reflection token={token} />;
+					}}
+				/>
+				<Route 
+					path='/analysis'
+					exact
+					render={() => {
+						return <Analysis token={token} />;
+					}}
+				/>
+				<Route 
+					path='/login'
+					exact
+					render={() => {
+						return <Login setToken={setToken} />
+					}}
+				/>
 				<Route path='/registration' component={Registration} />
 			</main>
 		</div>
