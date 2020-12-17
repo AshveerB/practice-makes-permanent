@@ -12,6 +12,7 @@ const Goals = ({ token }) => {
 		earning: '',
 		spending: '',
 		travel: '',
+		date: '',
 	};
 	const [formState, setFormState] = useState(initialState);
 	const handleSubmit = (event) => {
@@ -76,6 +77,10 @@ const Goals = ({ token }) => {
 				<br />
 				<label htmlFor='travel'>Enter the amount of time traveling: </label>
 				<input id='travel' onChange={handleChange} value={formState.travel} />
+				<br />
+				<label htmlFor='date'>Enter the date: </label>
+				<input id='date' onChange={handleChange} value={formState.date} />
+				<br />
 				<button type='submit'>Submit</button>
 			</form>
 		</div>
