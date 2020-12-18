@@ -9,9 +9,9 @@ import Analysis from './components/analysis/Analysis';
 import Login from './components/login/Login';
 import Registration from './components/registration/Registration';
 import Header from './components/header/Header';
-import Hdetails from './components/habit_details/Hdetails'
-import Gdetails from './components/goal_details/Gdetails'
-import Rdetails from './components/reflection_details/Rdetails'
+import Hdetails from './components/habit_details/Hdetails';
+import Gdetails from './components/goal_details/Gdetails';
+import Rdetails from './components/reflection_details/Rdetails';
 import './App.css';
 
 function App() {
