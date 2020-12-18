@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
+import './Reflection.css'
 
 const Reflection = ({ loggedIn }) => {
 	const url = 'http://localhost:8000/reflections/';
@@ -49,9 +50,10 @@ const Reflection = ({ loggedIn }) => {
 					id='reflection'
 					onChange={handleChange}
 					value={formState.reflection}
+					className='reflectioninput'
 				/>
 				<br />
-				<label htmlFor='date'>Enter the date: </label>
+				<label htmlFor='date'>Enter the date(YYYY-MM-DD): </label>
 				<input id='date' onChange={handleChange} value={formState.date} />
 				<br />
 				<button type='submit'>Submit</button>

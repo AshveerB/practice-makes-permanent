@@ -47,64 +47,68 @@ const Gdetails = ({ loggedIn, match }) => {
 		});
 		setFormState(goal);
 	};
-    return <div style={{ display: loggedIn ? 'block' : 'none' }}>
-            Goal Details<br />
-            {goal?.date}<br />
-			Update: 
-			<form onSubmit={handleSubmit}>
-				<label htmlFor='sleep'>Enter amount of time for sleep: </label>
-				<input id='sleep' onChange={handleChange} value={goal.sleep} />
+    return (
+			<div style={{ display: loggedIn ? 'block' : 'none' }}>
+				Goal Details
 				<br />
-				<label htmlFor='water'>Enter amount of water consumed: </label>
-				<input id='water' onChange={handleChange} value={goal.water} />
+				Date: {goal?.date}
 				<br />
-				<label htmlFor='exercise'>
-					Enter the amount of time for exercise:{' '}
-				</label>
-				<input
-					id='exercise'
-					onChange={handleChange}
-					value={goal.exercise}
-				/>
+				Amount of sleep: {goal?.sleep}
 				<br />
-				<label htmlFor='calories'>
-					Enter the amount of calories consumed:{' '}
-				</label>
-				<input
-					id='calories'
-					onChange={handleChange}
-					value={goal.calories}
-				/>
+				Amount of water: {goal?.water}
 				<br />
-				<label htmlFor='learning'>Enter amount of time for learning: </label>
-				<input
-					id='learning'
-					onChange={handleChange}
-					value={goal.learning}
-				/>
+				Amount of exercise: {goal?.exercise}
 				<br />
-				<label htmlFor='earning'>Enter amount of money earned: </label>
-				<input id='earning' onChange={handleChange} value={goal.earning} />
+				Amount of calories: {goal?.calories}
 				<br />
-				<label htmlFor='spending'>Enter amount of money spent: </label>
-				<input
-					id='spending'
-					onChange={handleChange}
-					value={goal.spending}
-				/>
+				Time spent learning: {goal?.learning}
 				<br />
-				<label htmlFor='travel'>Enter the amount of time traveling: </label>
-				<input id='travel' onChange={handleChange} value={goal.travel} />
+				Money spent: {goal?.spending}
 				<br />
-				<label htmlFor='date'>Enter the date: </label>
-				<input id='date' onChange={handleChange} value={goal.date} />
+				Money earned: {goal?.earning}
 				<br />
-				<button type='submit'>Update</button>
-			</form>
-			<div>
-				<button onClick={handleDelete}>Delete</button>
+				Places traveled: {goal?.travel}
+				<br />
+				Update:
+				<form onSubmit={handleSubmit}>
+					<label htmlFor='sleep'>Enter amount of time for sleep: </label>
+					<input id='sleep' onChange={handleChange} value={goal.sleep} />
+					<br />
+					<label htmlFor='water'>Enter amount of water consumed: </label>
+					<input id='water' onChange={handleChange} value={goal.water} />
+					<br />
+					<label htmlFor='exercise'>
+						Enter the amount of time for exercise:{' '}
+					</label>
+					<input id='exercise' onChange={handleChange} value={goal.exercise} />
+					<br />
+					<label htmlFor='calories'>
+						Enter the amount of calories consumed:{' '}
+					</label>
+					<input id='calories' onChange={handleChange} value={goal.calories} />
+					<br />
+					<label htmlFor='learning'>Enter amount of time for learning: </label>
+					<input id='learning' onChange={handleChange} value={goal.learning} />
+					<br />
+					<label htmlFor='earning'>Enter amount of money earned: </label>
+					<input id='earning' onChange={handleChange} value={goal.earning} />
+					<br />
+					<label htmlFor='spending'>Enter amount of money spent: </label>
+					<input id='spending' onChange={handleChange} value={goal.spending} />
+					<br />
+					<label htmlFor='travel'>Enter the amount of time traveling: </label>
+					<input id='travel' onChange={handleChange} value={goal.travel} />
+					<br />
+					<label htmlFor='date'>Enter the date(YYYY-MM-DD): </label>
+					<input id='date' onChange={handleChange} value={goal.date} />
+					<br />
+					<button type='submit'>Update</button>
+				</form>
+				<div>
+					<button onClick={handleDelete}>Delete</button>
+				</div>
 			</div>
-        </div>;
+		);
 };
 
 export default Gdetails;

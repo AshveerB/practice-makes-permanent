@@ -1,0 +1,33 @@
+.one {
+    font-size: 50px;
+}
+
+.two {
+    font-size: 30px;
+}
+
+.three {
+     font-size: 30px;
+}
+
+.five {
+     font-size: 30px;
+}
+
+.reactplayer {
+    display: flex;
+    justify-content: center;
+}
+
+.six {
+    font-size: 30px;
+}
+
+body {
+    background-color: rosybrown;
+    align-items: center;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: screen;
+}

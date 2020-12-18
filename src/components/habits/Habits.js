@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
+import './Habits.css'
 
 const Habits = ({ loggedIn }) => {
 	const url = 'http://localhost:8000/habits/';
@@ -99,7 +100,7 @@ const Habits = ({ loggedIn }) => {
 					value={formState.travel}
 				/>{' '}
 				<br />
-				<label htmlFor='date'>Enter the date: </label>
+				<label htmlFor='date'>Enter the date(YYYY-MM-DD): </label>
 				<input id='date' onChange={handleChange} value={formState.date} />
 				<br />
 				<button type='submit'>Submit</button>

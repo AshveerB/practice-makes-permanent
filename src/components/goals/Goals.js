@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
+import './Goals.css'
 
 const Goals = ({ loggedIn }) => {
 	const url = 'http://localhost:8000/goals/';
@@ -94,7 +95,7 @@ const Goals = ({ loggedIn }) => {
 				<label htmlFor='travel'>Enter the amount of time traveling: </label>
 				<input id='travel' onChange={handleChange} value={formState.travel} />
 				<br />
-				<label htmlFor='date'>Enter the date: </label>
+				<label htmlFor='date'>Enter the date(YYYY-MM-DD): </label>
 				<input id='date' onChange={handleChange} value={formState.date} />
 				<br />
 				<button type='submit'>Submit</button>

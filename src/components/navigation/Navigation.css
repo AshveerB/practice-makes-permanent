@@ -1,4 +1,11 @@
 span {
     padding-left: 15px;
+    font-size: 20px;
+    color: black;
 }
 
+button {
+    background-color: rgba(0, 0, 255, 0.322);
+    color: #000;
+    font-weight: 500;
+}

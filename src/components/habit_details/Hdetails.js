@@ -51,7 +51,23 @@ const Hdetails = ({ loggedIn, match }) => {
 		<div style={{ display: loggedIn ? 'block' : 'none' }}>
 			Habit Details
 			<br />
-			{habit?.date}
+			Date: {habit?.date}
+			<br />
+			Amount of sleep: {habit?.sleep}
+			<br />
+			Amount of water: {habit?.water}
+			<br />
+			Amount of exercise: {habit?.exercise}
+			<br />
+			Amount of calories: {habit?.calories}
+			<br />
+			Time spent learning: {habit?.learning}
+			<br />
+			Money spent: {habit?.spending}
+			<br />
+			Money earned: {habit?.earning}
+			<br />
+			Places traveled: {habit?.travel}
 			<br />
 			Update:
 			<form onSubmit={handleSubmit}>
@@ -87,7 +103,7 @@ const Hdetails = ({ loggedIn, match }) => {
 				<label htmlFor='travel'>Enter the amount of time traveling: </label>
 				<input id='travel' onChange={handleChange} value={habit.travel} />{' '}
 				<br />
-				<label htmlFor='date'>Enter the date: </label>
+				<label htmlFor='date'>Enter the date(YYYY-MM-DD): </label>
 				<input id='date' onChange={handleChange} value={habit.date} />
 				<br />
 				<button type='submit'>Update</button>

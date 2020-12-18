@@ -3,10 +3,10 @@ import Axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 const Rdetails = ({ loggedIn, match }) => {
-    const [reflection, setReflection] = useState('')
-    const endpoint = `${match.params.id}`;
+	const [reflection, setReflection] = useState('');
+	const endpoint = `${match.params.id}`;
 	const url = `http://localhost:8000/reflections/${endpoint}/`;
-	const history = useHistory()
+	const history = useHistory();
 	const handleDelete = () => {
 		Axios({
 			url: url,
@@ -15,8 +15,8 @@ const Rdetails = ({ loggedIn, match }) => {
 				Authorization: `Token ${localStorage.token}`,
 			},
 		}).then(() => {
-			history.push('/reflections')
-		})
+			history.push('/reflections');
+		});
 	};
 	useEffect(() => {
 		Axios({
@@ -47,11 +47,14 @@ const Rdetails = ({ loggedIn, match }) => {
 		});
 		setFormState(reflection);
 	};
-    return (
-        <div style={{ display: loggedIn ? 'block' : 'none' }}>
-            Reflection Details<br />
-            {reflection.date}<br />
-			{reflection.reflection}<br />
+	return (
+		<div style={{ display: loggedIn ? 'block' : 'none' }}>
+			Reflection Details
+			<br />
+			Date: {reflection.date}
+			<br />
+			Reflection: {reflection.reflection}
+			<br />
 			UPDATE:
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='reflection'>Enter Reflection: </label>
@@ -60,9 +63,10 @@ const Rdetails = ({ loggedIn, match }) => {
 					id='reflection'
 					onChange={handleChange}
 					value={reflection.reflection}
+					className='reflectioninput'
 				/>
 				<br />
-				<label htmlFor='date'>Enter the date: </label>
+				<label htmlFor='date'>Enter the date(YYYY-MM-DD): </label>
 				<input id='date' onChange={handleChange} value={reflection.date} />
 				<br />
 				<button type='submit'>Update</button>
@@ -70,8 +74,8 @@ const Rdetails = ({ loggedIn, match }) => {
 			<div>
 				<button onClick={handleDelete}>Delete</button>
 			</div>
-        </div>
-    );
+		</div>
+	);
 };
 
 export default Rdetails;

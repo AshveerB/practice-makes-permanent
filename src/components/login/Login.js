@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import './Login.css'
 
 const Login = ({ loggedIn, setLoggedIn }) => {
 	const initialState = {
@@ -27,8 +28,8 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 		return <Redirect to='/' />;
 	}
 	return (
-		<div>
-			Login
+		<div className='login'>
+			Login Below:
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='email'>Enter Email: </label>
 				<input
@@ -45,7 +46,8 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 				/>
 				<button type='submit'>Submit</button>
 			</form>
-			<Link to='/registration'>Register</Link>
+			Not Signed up? Register Below:<br />
+			<Link to='/registration' className='registration'>Register</Link>
 		</div>
 	);
 };

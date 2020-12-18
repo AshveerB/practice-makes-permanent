@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import './Registration.css'
 
 const Registration = () => {
 	const initialState = {
@@ -27,8 +28,8 @@ const Registration = () => {
 		setFormState({ ...formState, [event.target.id]: event.target.value });
 	};
 	return (
-		<div>
-			Registration
+		<div className='regdiv'>
+			Register Below:
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='username'>Enter Username: </label>
 				<input
@@ -55,6 +56,8 @@ const Registration = () => {
 				/>
 				<button type='submit'>Submit</button>
 			</form>
+			Email must be unique<br />
+			Password must be combination of at least 8 letters and numbers
 		</div>
 	);
 };
