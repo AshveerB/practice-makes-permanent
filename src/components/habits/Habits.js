@@ -1,8 +1,9 @@
 import Axios from 'axios';
-import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Redirect, Link } from 'react-router-dom';
 
-const Habits = ({ token }) => {
+const Habits = ({ loggedIn }) => {
+	const url = 'http://localhost:8000/habits/';
 	const initialState = {
 		sleep: '',
 		water: '',
@@ -14,24 +15,38 @@ const Habits = ({ token }) => {
 		travel: '',
 		date: '',
 	};
+	const [habits, setHabits] = useState([]);
 	const [formState, setFormState] = useState(initialState);
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(formState);
 		Axios({
-			url: 'http://localhost:8000/habits/',
+			url: url,
 			method: 'POST',
-			headers: { Authorization: `Bearer ${token}` },
+			headers: {
+				Authorization: `Token ${localStorage.token}`,
+			},
 			data: formState,
-		});	
-		<Redirect to='/habits' />
+		});
+		<Redirect to='/habits' />;
 		setFormState(initialState);
 	};
 	const handleChange = (event) => {
 		setFormState({ ...formState, [event.target.id]: event.target.value });
 	};
+	useEffect(() => {
+		Axios({
+			url: url,
+			method: 'GET',
+			headers: {
+				Authorization: `Token ${localStorage.token}`,
+			},
+		}).then((res) => {
+			setHabits(res.data);
+		});
+	}, [url]);
 	return (
-		<div>
+		<div style={{ display: loggedIn ? 'block' : 'none' }}>
+			{' '}
 			Habits
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='sleep'>Enter amount of time for sleep: </label>
@@ -76,11 +91,28 @@ const Habits = ({ token }) => {
 				/>{' '}
 				<br />
 				<label htmlFor='travel'>Enter the amount of time traveling: </label>
-				<input id='travel' onChange={handleChange} value={formState.travel} /> <br />
+				<input
+					id='travel'
+					onChange={handleChange}
+					value={formState.travel}
+				/>{' '}
+				<br />
 				<label htmlFor='date'>Enter the date: </label>
-				<input id='date' onChange={handleChange} value={formState.date} /><br />
+				<input id='date' onChange={handleChange} value={formState.date} />
+				<br />
 				<button type='submit'>Submit</button>
 			</form>
+			<div>
+				Record of Habits:
+				<br />
+				<ul>
+					{habits.map((habit) => (
+						<Link to={`/habits/${habit.id}`} key={habit.id}>
+							<h2 key={habit.id}>{habit.date}</h2>
+						</Link>
+					))}
+				</ul>
+			</div>
 		</div>
 	);
 };

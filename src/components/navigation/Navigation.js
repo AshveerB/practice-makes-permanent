@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import './Navigation.css'
 
-const Navigation = () => {
+const Navigation = ({ loggedIn, handleLogout }) => {
     return (
         <div>
             <span>
@@ -21,7 +21,12 @@ const Navigation = () => {
                 <Link to='/analysis'>Analysis</Link>
             </span>
             <span>
-                <Link to='/login'>Login</Link>
+                {!loggedIn && <Link to='/login'>Login</Link>}
+				{loggedIn && (
+					<button onClick={handleLogout}>
+						Logout
+					</button>
+				)}
             </span>
         </div>
     );

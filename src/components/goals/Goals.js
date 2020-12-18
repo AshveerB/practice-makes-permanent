@@ -1,8 +1,9 @@
 import Axios from 'axios';
-import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Redirect, Link } from 'react-router-dom';
 
-const Goals = ({ token }) => {
+const Goals = ({ loggedIn }) => {
+	const url = 'http://localhost:8000/goals/';
 	const initialState = {
 		sleep: '',
 		water: '',
@@ -14,24 +15,37 @@ const Goals = ({ token }) => {
 		travel: '',
 		date: '',
 	};
+	const [goals, setGoals] = useState([])
 	const [formState, setFormState] = useState(initialState);
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(formState);
 		Axios({
-			url: 'http://localhost:8000/goals/',
+			url: url,
 			method: 'POST',
-			headers: { Authorization: `Bearer ${token}` },
+			headers: {
+				Authorization: `Token ${localStorage.token}`,
+			},
 			data: formState,
 		});
-		<Redirect to='/goals' />
+		<Redirect to='/goals' />;
 		setFormState(initialState);
 	};
 	const handleChange = (event) => {
 		setFormState({ ...formState, [event.target.id]: event.target.value });
 	};
+	useEffect(() => {
+		Axios({
+			url: url,
+			method: 'GET',
+			headers: {
+				Authorization: `Token ${localStorage.token}`,
+			},
+		}).then((res) => {
+			setGoals(res.data);
+		});
+	}, [url]);
 	return (
-		<div>
+		<div style={{ display: loggedIn ? 'block' : 'none' }}>
 			Goals
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='sleep'>Enter amount of time for sleep: </label>
@@ -83,6 +97,17 @@ const Goals = ({ token }) => {
 				<br />
 				<button type='submit'>Submit</button>
 			</form>
+			<div>
+				Record of Goals:
+				<br />
+				<ul>
+					{goals.map((goal) => (
+						<Link to={`/goals/${goal.id}`} key={goal.id}>
+							<h2 key={goal.id}>{goal.date}</h2>
+						</Link>
+					))}
+				</ul>
+			</div>
 		</div>
 	);
 };
