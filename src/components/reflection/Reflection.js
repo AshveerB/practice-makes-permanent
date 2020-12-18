@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 const Reflection = ({ loggedIn }) => {
 	const url = 'http://localhost:8000/reflections/';
@@ -10,6 +10,7 @@ const Reflection = ({ loggedIn }) => {
 	};
 	const [reflections, setReflections] = useState([])
 	const [formState, setFormState] = useState(initialState);
+	const history = useHistory()
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		Axios({
@@ -19,8 +20,9 @@ const Reflection = ({ loggedIn }) => {
 				Authorization: `Token ${localStorage.token}`,
 			},
 			data: formState,
-		});
-		<Redirect to='/reflections' />;
+		}).then(() => {
+			history.push('/')
+		})
 		setFormState(initialState);
 	};
 	const handleChange = (event) => {

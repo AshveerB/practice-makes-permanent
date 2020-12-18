@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Registration = () => {
 	const initialState = {
@@ -9,6 +9,7 @@ const Registration = () => {
 		password: '',
 		re_password: '',
 	};
+	const history = useHistory()
 	const [formState, setFormState] = useState(initialState);
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -17,11 +18,9 @@ const Registration = () => {
 			url: 'http://localhost:8000/users/',
 			method: 'POST',
 			data: formState,
-		}).then((res) => {
-			console.log(res);
-		});
-		
-		<Redirect to='/login' />;
+		}).then(() => {
+			history.push('/login')
+		})
 		setFormState(initialState);
 	};
 	const handleChange = (event) => {

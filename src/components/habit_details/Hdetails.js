@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Hdetails = ({ loggedIn, match }) => {
 	const [habit, setHabit] = useState('');
 	const endpoint = `${match.params.id}`;
-	const url = `http://localhost:8000/habits/${endpoint}`;
+	const url = `http://localhost:8000/habits/${endpoint}/`;
+	const history = useHistory();
 	const handleDelete = () => {
 		Axios({
 			url: url,
@@ -13,8 +14,10 @@ const Hdetails = ({ loggedIn, match }) => {
 			headers: {
 				Authorization: `Token ${localStorage.token}`,
 			},
-		}).then(<Redirect to='/habits'/>)
-	}
+		}).then(() => {
+			history.push('/habits');
+		});
+	};
 	useEffect(() => {
 		Axios({
 			url: url,
@@ -26,11 +29,69 @@ const Hdetails = ({ loggedIn, match }) => {
 			setHabit(res.data);
 		});
 	}, [url]);
+	const [formState, setFormState] = useState(habit);
+	const handleChange = (event) => {
+		setHabit({ ...habit, [event.target.id]: event.target.value });
+	};
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		Axios({
+			url: url,
+			method: 'PUT',
+			headers: {
+				Authorization: `Token ${localStorage.token}`,
+			},
+			data: formState,
+		}).then(() => {
+			history.push('/habits');
+		});
+		setFormState(habit);
+	};
 	return (
 		<div style={{ display: loggedIn ? 'block' : 'none' }}>
 			Habit Details
 			<br />
 			{habit?.date}
+			<br />
+			Update:
+			<form onSubmit={handleSubmit}>
+				<label htmlFor='sleep'>Enter amount of time for sleep: </label>
+				<input id='sleep' onChange={handleChange} value={habit.sleep} />
+				<br />
+				<label htmlFor='water'>Enter amount of water consumed: </label>
+				<input id='water' onChange={handleChange} value={habit.water} />
+				<br />
+				<label htmlFor='exercise'>
+					Enter the amount of time for exercise:{' '}
+				</label>
+				<input id='exercise' onChange={handleChange} value={habit.exercise} />
+				<br />
+				<label htmlFor='calories'>
+					Enter the amount of calories consumed:{' '}
+				</label>
+				<input id='calories' onChange={handleChange} value={habit.calories} />
+				<br />
+				<label htmlFor='learning'>Enter amount of time for learning: </label>
+				<input id='learning' onChange={handleChange} value={habit.learning} />
+				<br />
+				<label htmlFor='earning'>Enter amount of money earned: </label>
+				<input id='earning' onChange={handleChange} value={habit.earning} />
+				<br />
+				<label htmlFor='spending'>Enter amount of money spent: </label>
+				<input
+					id='spending'
+					onChange={handleChange}
+					value={habit.spending}
+				/>{' '}
+				<br />
+				<label htmlFor='travel'>Enter the amount of time traveling: </label>
+				<input id='travel' onChange={handleChange} value={habit.travel} />{' '}
+				<br />
+				<label htmlFor='date'>Enter the date: </label>
+				<input id='date' onChange={handleChange} value={habit.date} />
+				<br />
+				<button type='submit'>Update</button>
+			</form>
 			<div>
 				<button onClick={handleDelete}>Delete</button>
 			</div>

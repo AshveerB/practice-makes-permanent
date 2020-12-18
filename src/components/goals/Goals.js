@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 const Goals = ({ loggedIn }) => {
 	const url = 'http://localhost:8000/goals/';
@@ -15,6 +15,7 @@ const Goals = ({ loggedIn }) => {
 		travel: '',
 		date: '',
 	};
+	const history = useHistory()
 	const [goals, setGoals] = useState([])
 	const [formState, setFormState] = useState(initialState);
 	const handleSubmit = (event) => {
@@ -26,8 +27,9 @@ const Goals = ({ loggedIn }) => {
 				Authorization: `Token ${localStorage.token}`,
 			},
 			data: formState,
-		});
-		<Redirect to='/goals' />;
+		}).then(() => {
+			history.push('/')
+		})
 		setFormState(initialState);
 	};
 	const handleChange = (event) => {
