@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import './Registration.css'
+import APIURL from '../../Config'
 
 const Registration = () => {
 	const initialState = {
@@ -14,9 +15,8 @@ const Registration = () => {
 	const [formState, setFormState] = useState(initialState);
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(formState);
 		Axios({
-			url: 'http://localhost:8000/users/',
+			url: `${APIURL}users/`,
 			method: 'POST',
 			data: formState,
 		}).then(() => {

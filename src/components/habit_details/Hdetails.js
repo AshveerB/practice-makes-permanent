@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import APIURL from '../../Config';
 
 const Hdetails = ({ loggedIn, match }) => {
 	const [habit, setHabit] = useState('');
 	const endpoint = `${match.params.id}`;
-	const url = `http://localhost:8000/habits/${endpoint}/`;
+	const url = `${APIURL}habits/${endpoint}/`;
 	const history = useHistory();
 	const handleDelete = () => {
 		Axios({

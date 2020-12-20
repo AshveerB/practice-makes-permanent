@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import APIURL from '../../Config';
 
 const Rdetails = ({ loggedIn, match }) => {
 	const [reflection, setReflection] = useState('');
 	const endpoint = `${match.params.id}`;
-	const url = `http://localhost:8000/reflections/${endpoint}/`;
+	const url = `${APIURL}reflections/${endpoint}/`;
 	const history = useHistory();
 	const handleDelete = () => {
 		Axios({
