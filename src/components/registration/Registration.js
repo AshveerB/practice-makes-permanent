@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import './Registration.css'
-import APIURL from '../../Config'
 
 const Registration = () => {
 	const initialState = {
@@ -16,12 +15,12 @@ const Registration = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		Axios({
-			url: `${APIURL}users/`,
+			url: 'https://practice-makes-permanent.herokuapp.com/users/',
 			method: 'POST',
 			data: formState,
 		}).then(() => {
-			history.push('/login')
-		})
+			history.push('/login');
+		});
 		setFormState(initialState);
 	};
 	const handleChange = (event) => {

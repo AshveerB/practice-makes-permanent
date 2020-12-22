@@ -2,10 +2,9 @@ import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import './Habits.css'
-import APIURL from '../../Config';
 
 const Habits = ({ loggedIn }) => {
-	const url = `${APIURL}habits/`;
+	const url = 'https://practice-makes-permanent.herokuapp.com/habits/';
 	const initialState = {
 		sleep: '',
 		water: '',

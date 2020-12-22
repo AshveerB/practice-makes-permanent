@@ -2,7 +2,6 @@ import Axios from 'axios';
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import './Login.css'
-import APIURL from '../../Config';
 
 const Login = ({ loggedIn, setLoggedIn }) => {
 	const initialState = {
@@ -13,7 +12,7 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		Axios({
-			url: `${APIURL}token/login/`,
+			url: 'https://practice-makes-permanent.herokuapp.com/token/login/',
 			method: 'POST',
 			data: formState,
 		}).then((res) => {

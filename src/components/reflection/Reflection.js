@@ -2,10 +2,9 @@ import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import './Reflection.css'
-import APIURL from '../../Config';
 
 const Reflection = ({ loggedIn }) => {
-	const url = `${APIURL}reflections/`;
+	const url = 'https://practice-makes-permanent.herokuapp.com/reflections/';
 	const initialState = {
 		reflection: '',
 		date: '',

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import APIURL from '../../Config';
 
 const Gdetails = ({ loggedIn, match }) => {
     const [goal, setGoal] = useState('');
 	const endpoint = `${match.params.id}`;
-	const url = `${APIURL}goals/${endpoint}/`;
+	const url = `https://practice-makes-permanent.herokuapp.com/goals/${endpoint}/`;
 	const history = useHistory()
 	const handleDelete = () => {
 		Axios({
