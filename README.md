@@ -12,7 +12,7 @@ A personal habit tracker that will enable user to make changes in their lives th
 
 1. React
 2. Django
-3. PostgreSQl
+3. PostgreSQL
 4. Postman
 
 ## Installation and Usage
