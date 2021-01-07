@@ -6,7 +6,7 @@ A personal habit tracker that will enable user to make changes in their lives th
 
 ## Deployed App
 
-https://practice-makes-permanent-fe.herokuapp.com/
+[Practice Makes Permanent](https://practice-makes-permanent-fe.herokuapp.com/)
 
 ## Technologies Used
 
