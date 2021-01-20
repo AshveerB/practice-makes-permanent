@@ -1,26 +1,6 @@
-.one {
-    font-size: 50px;
-}
-
-.two {
-    font-size: 30px;
-}
-
-.three {
-     font-size: 30px;
-}
-
-.five {
-     font-size: 30px;
-}
-
 .reactplayer {
     display: flex;
     justify-content: center;
-}
-
-.six {
-    font-size: 30px;
 }
 
 body {
@@ -30,4 +10,63 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: screen;
+}
+
+@media only screen and (max-width: 600px) {
+    .title {
+        font-size: 30px;
+        height: 50px;
+    }
+    .info {
+        font-size: 20px;
+        height: 120px;
+    }
+    .videoIntro {
+        font-size: 20px;
+    }
+    .linksTitle {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .title {
+        font-size: 30px;
+        height: 50px;
+    }
+    .info {
+        font-size: 25px;
+        height: 140px;
+    }
+    .videoIntro {
+        font-size: 30px;
+    }
+    .linksTitle {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+   .title {
+       font-size: 50px;
+       height: 70px;
+   }
+   .info {
+       font-size: 35px;
+       height: 160px;
+   }
+   .videoIntro {
+       font-size: 25px;
+   }
+   .linksTitle {
+       font-size: 22px;
+   }
+   .videoContainer {
+       
+   }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    
 }
