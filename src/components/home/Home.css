@@ -59,14 +59,25 @@ body {
        font-size: 25px;
    }
    .linksTitle {
-       font-size: 22px;
+       font-size: 25px;
    }
-   .videoContainer {
-       
-   }
-
 }
 
 @media only screen and (min-width: 1200px) {
-    
+    .displayContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-content: center;
+    }
+    .videoContainer {
+        max-width: 525px;
+    }
+    .linksContainer {
+        max-width: 525px;
+        align-self: center;
+    }
+    .link {
+        font-size: 20px;
+    }
 }
