@@ -8,6 +8,7 @@
 
 .registration {
     color: black;
+    font-size: 20px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -26,6 +27,21 @@
 }
 
 @media only screen and (min-width: 600px) {
+    .loginTitle, .emailLabel, .passwordLabel {
+        font-size: 35px;
+    }
+    .emailInput, .passwordInput {
+        font-size: 30px;
+        width: 450px;
+        display: flex;
+        flex-direction: column;
+    }
+    .loginSubmit {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
     .loginTitle, .emailLabel, .passwordLabel {
         font-size: 40px;
     }

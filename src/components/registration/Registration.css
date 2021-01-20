@@ -1,13 +1,53 @@
-.regdiv {
+.registrationContainer {
     color: black;
-    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
 }
 
-body {
-    background-color: rosybrown;
-    align-items: center;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: screen;
+@media only screen and (max-width: 600px) {
+    .registrationTitle, .usernameLabel, .registrationEmailLabel, .registrationPasswordLabel, .re_passwordLabel, .qualification {
+        font-size: 30px;
+    }
+    .usernameInput, .registrationEmailInput, .registrationPasswordInput, .re_passwordInput{
+        font-size: 25px;
+        width: 450px;
+        display: flex;
+        flex-direction: column;
+    }
+    .registrationFormSubmit {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .registrationTitle, .usernameLabel, .registrationEmailLabel, .registrationPasswordLabel, .re_passwordLabel, .qualification {
+        font-size: 35px;
+    }
+    .usernameInput, .registrationEmailInput, .registrationPasswordInput, .re_passwordInput{
+        font-size: 33px;
+        width: 450px;
+        display: flex;
+        flex-direction: column;
+    }
+    .registrationFormSubmit {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .registrationTitle, .usernameLabel, .registrationEmailLabel, .registrationPasswordLabel, .re_passwordLabel, .qualification {
+        font-size: 40px;
+    }
+    .usernameInput, .registrationEmailInput, .registrationPasswordInput, .re_passwordInput{
+        font-size: 35px;
+        width: 450px;
+        display: flex;
+        flex-direction: column;
+    }
+    .registrationFormSubmit {
+        font-size: 30px;
+    }
 }

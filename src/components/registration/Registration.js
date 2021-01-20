@@ -27,36 +27,59 @@ const Registration = () => {
 		setFormState({ ...formState, [event.target.id]: event.target.value });
 	};
 	return (
-		<div className='regdiv'>
-			Register Below:
+		<div className='registrationContainer'>
+			<div className='registrationTitle'>Register Below:</div>
 			<form onSubmit={handleSubmit}>
-				<label htmlFor='username'>Enter Username: </label>
+				<label htmlFor='username' className='usernameLabel'>
+					Enter Username:{' '}
+				</label>
 				<input
 					id='username'
 					onChange={handleChange}
 					value={formState.username}
+					placeholder='Username'
+					className='usernameInput'
 				/>
 				<br />
-				<label htmlFor='email'>Enter Email: </label>
-				<input id='email' onChange={handleChange} value={formState.email} />
+				<label htmlFor='email' className='registrationEmailLabel'>
+					Enter Email:{' '}
+				</label>
+				<input
+					id='email'
+					onChange={handleChange}
+					value={formState.email}
+					placeholder='Email'
+					className='registrationEmailInput'
+				/>
 				<br />
-				<label htmlFor='password'>Enter Password: </label>
+				<label htmlFor='password' className='registrationPasswordLabel'>
+					Enter Password:{' '}
+				</label>
 				<input
 					id='password'
 					onChange={handleChange}
 					value={formState.password}
+					placeholder='Password'
+					className='registrationPasswordInput'
 				/>
 				<br />
-				<label htmlFor='re_password'>Confirm Password: </label>
+				<label htmlFor='re_password' className='re_passwordLabel'>
+					Confirm Password:{' '}
+				</label>
 				<input
 					id='re_password'
 					onChange={handleChange}
 					value={formState.re_password}
+					placeholder='Confirm Password'
+					className='re_passwordInput'
 				/>
-				<button type='submit'>Submit</button>
+				<button type='submit' className='registrationFormSubmit'>
+					Submit
+				</button>
 			</form>
-			Email must be unique<br />
-			Password must be combination of at least 8 letters and numbers
+			<div className='qualification'>Email must be unique</div>
+			<br />
+			<div className='qualification'>Password must be combination of at least 8 letters and numbers</div>
 		</div>
 	);
 };
