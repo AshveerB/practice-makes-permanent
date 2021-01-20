@@ -29,25 +29,32 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 	}
 	return (
 		<div className='login'>
-			Login Below:
+			<div className='loginTitle'>Login Below:</div>
 			<form onSubmit={handleSubmit}>
-				<label htmlFor='email'>Enter Email: </label>
+				<label htmlFor='email' className='emailLabel'>Enter Email: </label>
 				<input
 					id='email'
 					onChange={handleChange}
 					value={formState.email}
+					placeholder='Email'
+					className='emailInput'
 				/>{' '}
 				<br />
-				<label htmlFor='password'>Enter Password: </label>
+				<label htmlFor='password' className='passwordLabel'>Enter Password: </label>
 				<input
 					id='password'
 					onChange={handleChange}
 					value={formState.password}
+					placeholder='Password'
+					className='passwordInput'
 				/>
-				<button type='submit'>Submit</button>
+				<button type='submit' className='loginSubmit'>Submit</button>
 			</form>
-			Not Signed up? Register Below:<br />
-			<Link to='/registration' className='registration'>Register</Link>
+			<div className='registrationTitle'>Not Signed up? Register Below:</div>
+			<br />
+			<Link to='/registration' className='registration'>
+				Register
+			</Link>
 		</div>
 	);
 };
