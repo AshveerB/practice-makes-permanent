@@ -49,67 +49,132 @@ const Hdetails = ({ loggedIn, match }) => {
 	};
 	return (
 		<div style={{ display: loggedIn ? 'block' : 'none' }}>
-			Habit Details
+			<div className='habitsDetailsTitle'>Habit Details</div>
 			<br />
-			Date: {habit?.date}
+			<div className='habitsDetailDate'>Date: {habit?.date}</div>
 			<br />
-			Amount of sleep: {habit?.sleep}
+			<div className='habitsDetailSleep'>Amount of sleep: {habit?.sleep}</div>
 			<br />
-			Amount of water: {habit?.water}
+			<div className='habitsDetailWater'>Amount of water: {habit?.water}</div>
 			<br />
-			Amount of exercise: {habit?.exercise}
+			<div className='habitsDetailExercise'>
+				Amount of exercise: {habit?.exercise}
+			</div>
 			<br />
-			Amount of calories: {habit?.calories}
+			<div className='habitsDetailCalories'>
+				Amount of calories: {habit?.calories}
+			</div>
 			<br />
-			Time spent learning: {habit?.learning}
+			<div className='habitsDetailLearning'>
+				Time spent learning: {habit?.learning}
+			</div>
 			<br />
-			Money spent: {habit?.spending}
+			<div className='habitsDetailSpending'>Money spent: {habit?.spending}</div>
 			<br />
-			Money earned: {habit?.earning}
+			<div className='habitsDetailEarning'>Money earned: {habit?.earning}</div>
 			<br />
-			Places traveled: {habit?.travel}
+			<div className='HabitsDetailTravel'>Places traveled: {habit?.travel}</div>
 			<br />
-			Update:
+			<div className='HabitsDetailUpdate'>Update:</div>
 			<form onSubmit={handleSubmit}>
-				<label htmlFor='sleep'>Enter amount of time for sleep: </label>
-				<input id='sleep' onChange={handleChange} value={habit.sleep} />
+				<label htmlFor='sleep' className='habitsUpdateSleepLabel'>
+					Enter amount of time for sleep:{' '}
+				</label>
+				<input
+					id='sleep'
+					onChange={handleChange}
+					value={habit.sleep}
+					className='habitsUpdateSleepInput'
+				/>
 				<br />
-				<label htmlFor='water'>Enter amount of water consumed: </label>
-				<input id='water' onChange={handleChange} value={habit.water} />
+				<label htmlFor='water' className='habitsUpdateWaterLabel'>
+					Enter amount of water consumed:{' '}
+				</label>
+				<input
+					id='water'
+					onChange={handleChange}
+					value={habit.water}
+					className='habitsUpdateWaterInput'
+				/>
 				<br />
-				<label htmlFor='exercise'>
+				<label htmlFor='exercise' className='habitsUpdateExerciseLabel'>
 					Enter the amount of time for exercise:{' '}
 				</label>
-				<input id='exercise' onChange={handleChange} value={habit.exercise} />
+				<input
+					id='exercise'
+					onChange={handleChange}
+					value={habit.exercise}
+					className='habitsUpdateExerciseInput'
+				/>
 				<br />
-				<label htmlFor='calories'>
+				<label htmlFor='calories' className='habitsUpdateCaloriesLabel'>
 					Enter the amount of calories consumed:{' '}
 				</label>
-				<input id='calories' onChange={handleChange} value={habit.calories} />
+				<input
+					id='calories'
+					onChange={handleChange}
+					value={habit.calories}
+					className='habitsUpdateCaloriesInput'
+				/>
 				<br />
-				<label htmlFor='learning'>Enter amount of time for learning: </label>
-				<input id='learning' onChange={handleChange} value={habit.learning} />
+				<label htmlFor='learning' className='habitsUpdateLearningLabel'>
+					Enter amount of time for learning:{' '}
+				</label>
+				<input
+					id='learning'
+					onChange={handleChange}
+					value={habit.learning}
+					className='habitsUpdateLearningInput'
+				/>
 				<br />
-				<label htmlFor='earning'>Enter amount of money earned: </label>
-				<input id='earning' onChange={handleChange} value={habit.earning} />
+				<label htmlFor='earning' className='habitsUpdateEarningLabel'>
+					Enter amount of money earned:{' '}
+				</label>
+				<input
+					id='earning'
+					onChange={handleChange}
+					value={habit.earning}
+					className='habitsUpdateEarningInput'
+				/>
 				<br />
-				<label htmlFor='spending'>Enter amount of money spent: </label>
+				<label htmlFor='spending' className='habitsUpdateSpendingLabel'>
+					Enter amount of money spent:{' '}
+				</label>
 				<input
 					id='spending'
 					onChange={handleChange}
 					value={habit.spending}
+					className='habitsUpdateSpendingInput'
 				/>{' '}
 				<br />
-				<label htmlFor='travel'>Enter the amount of time traveling: </label>
-				<input id='travel' onChange={handleChange} value={habit.travel} />{' '}
+				<label htmlFor='travel' className='habitsUpdateTravelLabel'>
+					Enter the amount of time traveling:{' '}
+				</label>
+				<input
+					id='travel'
+					onChange={handleChange}
+					value={habit.travel}
+					className='habitsUpdateTravelInput'
+				/>{' '}
 				<br />
-				<label htmlFor='date'>Enter the date(YYYY-MM-DD): </label>
-				<input id='date' onChange={handleChange} value={habit.date} />
+				<label htmlFor='date' className='habitsUpdateDateLabel'>
+					Enter the date(YYYY-MM-DD):{' '}
+				</label>
+				<input
+					id='date'
+					onChange={handleChange}
+					value={habit.date}
+					className='habitsUpdateDateInput'
+				/>
 				<br />
-				<button type='submit' className='hvr-grow'>Update</button>
+				<button type='submit' className='habitsUpdateFormSubmit hvr-grow'>
+					Update
+				</button>
 			</form>
 			<div>
-				<button onClick={handleDelete} className='hvr-grow'>Delete</button>
+				<button onClick={handleDelete} className='habitDetailDelete hvr-grow'>
+					Delete
+				</button>
 			</div>
 		</div>
 	);

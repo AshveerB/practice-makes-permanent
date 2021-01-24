@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import './Login.css'
+import './Login.css';
 
 const Login = ({ loggedIn, setLoggedIn }) => {
 	const initialState = {
@@ -31,7 +31,9 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 		<div className='login'>
 			<div className='loginTitle'>Login Below:</div>
 			<form onSubmit={handleSubmit}>
-				<label htmlFor='email' className='emailLabel'>Enter Email: </label>
+				<label htmlFor='email' className='emailLabel'>
+					Enter Email:{' '}
+				</label>
 				<input
 					id='email'
 					onChange={handleChange}
@@ -40,7 +42,9 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 					className='emailInput'
 				/>{' '}
 				<br />
-				<label htmlFor='password' className='passwordLabel'>Enter Password: </label>
+				<label htmlFor='password' className='passwordLabel'>
+					Enter Password:{' '}
+				</label>
 				<input
 					id='password'
 					onChange={handleChange}
@@ -48,7 +52,9 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 					placeholder='Password'
 					className='passwordInput'
 				/>
-				<button type='submit' className='loginSubmit hvr-grow'>Submit</button>
+				<button type='submit' className='loginSubmit hvr-grow'>
+					Submit
+				</button>
 			</form>
 			<div className='registrationTitle'>Not Signed up? Register Below:</div>
 			<br />

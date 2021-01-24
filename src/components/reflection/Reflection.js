@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
-import './Reflection.css'
+import './Reflection.css';
 
 const Reflection = ({ loggedIn }) => {
 	const url = 'https://practice-makes-permanent.herokuapp.com/reflections/';
@@ -9,9 +9,9 @@ const Reflection = ({ loggedIn }) => {
 		reflection: '',
 		date: '',
 	};
-	const [reflections, setReflections] = useState([])
+	const [reflections, setReflections] = useState([]);
 	const [formState, setFormState] = useState(initialState);
-	const history = useHistory()
+	const history = useHistory();
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		Axios({
@@ -22,8 +22,8 @@ const Reflection = ({ loggedIn }) => {
 			},
 			data: formState,
 		}).then(() => {
-			history.push('/')
-		})
+			history.push('/');
+		});
 		setFormState(initialState);
 	};
 	const handleChange = (event) => {
@@ -77,7 +77,9 @@ const Reflection = ({ loggedIn }) => {
 				<ul>
 					{reflections.map((reflection) => (
 						<Link to={`/reflections/${reflection.id}`} key={reflection.id}>
-							<h2 key={reflection.id} className='reflectionList hvr-grow'>{reflection.date}</h2>
+							<h2 key={reflection.id} className='reflectionsList hvr-grow'>
+								{reflection.date}
+							</h2>
 						</Link>
 					))}
 				</ul>

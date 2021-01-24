@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import './Registration.css'
+import './Registration.css';
 
 const Registration = () => {
 	const initialState = {
@@ -10,7 +10,7 @@ const Registration = () => {
 		password: '',
 		re_password: '',
 	};
-	const history = useHistory()
+	const history = useHistory();
 	const [formState, setFormState] = useState(initialState);
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -79,7 +79,9 @@ const Registration = () => {
 			</form>
 			<div className='qualification'>Email must be unique</div>
 			<br />
-			<div className='qualification'>Password must be combination of at least 8 letters and numbers</div>
+			<div className='qualification'>
+				Password must be combination of at least 8 letters and numbers
+			</div>
 		</div>
 	);
 };

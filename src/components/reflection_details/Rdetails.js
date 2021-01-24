@@ -53,11 +53,15 @@ const Rdetails = ({ loggedIn, match }) => {
 			<br />
 			<div className='reflectionDetailsDate'>Date: {reflection.date}</div>
 			<br />
-			<div className='reflectionDetailsReflection'>Reflection: {reflection.reflection}</div>
+			<div className='reflectionDetailsReflection'>
+				Reflection: {reflection.reflection}
+			</div>
 			<br />
 			<div className='reflectionDetailUpdate'>UPDATE:</div>
 			<form onSubmit={handleSubmit}>
-				<label htmlFor='reflection' className='reflectionUpdateLabel'>Enter Reflection: </label>
+				<label htmlFor='reflection' className='reflectionUpdateLabel'>
+					Enter Reflection:{' '}
+				</label>
 				<input
 					type='textarea'
 					id='reflection'
@@ -66,13 +70,26 @@ const Rdetails = ({ loggedIn, match }) => {
 					className='reflectionUpdateInput'
 				/>
 				<br />
-				<label htmlFor='date' className='reflectionUpdateDateLabel'>Enter the date(YYYY-MM-DD): </label>
-				<input id='date' onChange={handleChange} value={reflection.date} className='reflectionUpdateDateInput'/>
+				<label htmlFor='date' className='reflectionUpdateDateLabel'>
+					Enter the date(YYYY-MM-DD):{' '}
+				</label>
+				<input
+					id='date'
+					onChange={handleChange}
+					value={reflection.date}
+					className='reflectionUpdateDateInput'
+				/>
 				<br />
-				<button type='submit' className='reflectionUpdateSubmit hvr-grow'>Update</button>
+				<button type='submit' className='reflectionUpdateFormSubmit hvr-grow'>
+					Update
+				</button>
 			</form>
 			<div>
-				<button onClick={handleDelete} className='reflectionDelete hvr-grow'>Delete</button>
+				<button
+					onClick={handleDelete}
+					className='reflectionDetailDelete hvr-grow'>
+					Delete
+				</button>
 			</div>
 		</div>
 	);
