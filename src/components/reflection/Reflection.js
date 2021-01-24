@@ -42,29 +42,42 @@ const Reflection = ({ loggedIn }) => {
 	}, [url]);
 	return (
 		<div style={{ display: loggedIn ? 'block' : 'none' }}>
-			Reflection
+			<div className='reflectionTitle'>Reflection</div>
 			<form onSubmit={handleSubmit}>
-				<label htmlFor='reflection'>Enter Reflection: </label>
+				<label htmlFor='reflection' className='reflectionLabel'>
+					Enter Reflection:{' '}
+				</label>
 				<input
 					type='textarea'
 					id='reflection'
 					onChange={handleChange}
 					value={formState.reflection}
+					placeholder='Enter Thoughts'
 					className='reflectioninput'
 				/>
 				<br />
-				<label htmlFor='date'>Enter the date(YYYY-MM-DD): </label>
-				<input id='date' onChange={handleChange} value={formState.date} />
+				<label htmlFor='date' className='reflectionDateLabel'>
+					Enter the date(YYYY-MM-DD):{' '}
+				</label>
+				<input
+					id='date'
+					onChange={handleChange}
+					value={formState.date}
+					placeholder='YYYY-MM-DD'
+					className='reflectionDateInput'
+				/>
 				<br />
-				<button type='submit'>Submit</button>
+				<button type='submit' className='reflectionFormSubmit'>
+					Submit
+				</button>
 			</form>
 			<div>
-				Record of Reflections:
+				<div className='reflectionRecords'>Record of Reflections:</div>
 				<br />
 				<ul>
 					{reflections.map((reflection) => (
 						<Link to={`/reflections/${reflection.id}`} key={reflection.id}>
-							<h2 key={reflection.id}>{reflection.date}</h2>
+							<h2 key={reflection.id} className='reflectionList'>{reflection.date}</h2>
 						</Link>
 					))}
 				</ul>

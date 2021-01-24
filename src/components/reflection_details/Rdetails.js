@@ -49,30 +49,30 @@ const Rdetails = ({ loggedIn, match }) => {
 	};
 	return (
 		<div style={{ display: loggedIn ? 'block' : 'none' }}>
-			Reflection Details
+			<div className='reflectionDetailsTitle'>Reflection Details</div>
 			<br />
-			Date: {reflection.date}
+			<div className='reflectionDetailsDate'>Date: {reflection.date}</div>
 			<br />
-			Reflection: {reflection.reflection}
+			<div className='reflectionDetailsReflection'>Reflection: {reflection.reflection}</div>
 			<br />
-			UPDATE:
+			<div className='reflectionDetailUpdate'>UPDATE:</div>
 			<form onSubmit={handleSubmit}>
-				<label htmlFor='reflection'>Enter Reflection: </label>
+				<label htmlFor='reflection' className='reflectionUpdateLabel'>Enter Reflection: </label>
 				<input
 					type='textarea'
 					id='reflection'
 					onChange={handleChange}
 					value={reflection.reflection}
-					className='reflectioninput'
+					className='reflectionUpdateInput'
 				/>
 				<br />
-				<label htmlFor='date'>Enter the date(YYYY-MM-DD): </label>
-				<input id='date' onChange={handleChange} value={reflection.date} />
+				<label htmlFor='date' className='reflectionUpdateDateLabel'>Enter the date(YYYY-MM-DD): </label>
+				<input id='date' onChange={handleChange} value={reflection.date} className='reflectionUpdateDateInput'/>
 				<br />
-				<button type='submit'>Update</button>
+				<button type='submit' className='reflectionUpdateSubmit'>Update</button>
 			</form>
 			<div>
-				<button onClick={handleDelete}>Delete</button>
+				<button onClick={handleDelete} className='reflectionDelete'>Delete</button>
 			</div>
 		</div>
 	);
