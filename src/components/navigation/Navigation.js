@@ -5,22 +5,22 @@ import './Navigation.css'
 const Navigation = ({ loggedIn, handleLogout }) => {
     return (
         <div>
-            <span>
+            <span className='hvr-grow'>
                 <Link to='/home'>Home</Link>
             </span>
-            <span>
+            <span className='hvr-grow'>
                 <Link to='/habits'>Habits</Link>
             </span>
-            <span>
+            <span className='hvr-grow'>
                 <Link to='/goals'>Goals</Link>
             </span>
-            <span>
+            <span className='hvr-grow'>
                 <Link to='/reflections'>Reflections</Link>
             </span>
-            <span>
+            <span className='hvr-grow'>
                 <Link to='/analysis'>Analysis</Link>
             </span>
-            <span>
+            <span className='hvr-grow'>
                 {!loggedIn && <Link to='/login'>Login</Link>}
 				{loggedIn && (
 					<button onClick={handleLogout}>

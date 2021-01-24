@@ -102,10 +102,10 @@ const Gdetails = ({ loggedIn, match }) => {
 					<label htmlFor='date'>Enter the date(YYYY-MM-DD): </label>
 					<input id='date' onChange={handleChange} value={goal.date} />
 					<br />
-					<button type='submit'>Update</button>
+					<button type='submit' className='hvr-grow'>Update</button>
 				</form>
 				<div>
-					<button onClick={handleDelete}>Delete</button>
+					<button onClick={handleDelete} className='hvr-grow'>Delete</button>
 				</div>
 			</div>
 		);

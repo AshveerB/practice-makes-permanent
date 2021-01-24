@@ -98,7 +98,7 @@ const Goals = ({ loggedIn }) => {
 				<label htmlFor='date'>Enter the date(YYYY-MM-DD): </label>
 				<input id='date' onChange={handleChange} value={formState.date} />
 				<br />
-				<button type='submit'>Submit</button>
+				<button type='submit' className='hvr-grow'>Submit</button>
 			</form>
 			<div>
 				Record of Goals:
@@ -106,7 +106,7 @@ const Goals = ({ loggedIn }) => {
 				<ul>
 					{goals.map((goal) => (
 						<Link to={`/goals/${goal.id}`} key={goal.id}>
-							<h2 key={goal.id}>{goal.date}</h2>
+							<h2 key={goal.id} className='hvr-grow'>{goal.date}</h2>
 						</Link>
 					))}
 				</ul>

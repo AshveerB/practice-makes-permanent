@@ -67,7 +67,7 @@ const Reflection = ({ loggedIn }) => {
 					className='reflectionDateInput'
 				/>
 				<br />
-				<button type='submit' className='reflectionFormSubmit'>
+				<button type='submit' className='reflectionFormSubmit hvr-grow'>
 					Submit
 				</button>
 			</form>
@@ -77,7 +77,7 @@ const Reflection = ({ loggedIn }) => {
 				<ul>
 					{reflections.map((reflection) => (
 						<Link to={`/reflections/${reflection.id}`} key={reflection.id}>
-							<h2 key={reflection.id} className='reflectionList'>{reflection.date}</h2>
+							<h2 key={reflection.id} className='reflectionList hvr-grow'>{reflection.date}</h2>
 						</Link>
 					))}
 				</ul>

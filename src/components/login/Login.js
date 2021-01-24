@@ -48,11 +48,11 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 					placeholder='Password'
 					className='passwordInput'
 				/>
-				<button type='submit' className='loginSubmit'>Submit</button>
+				<button type='submit' className='loginSubmit hvr-grow'>Submit</button>
 			</form>
 			<div className='registrationTitle'>Not Signed up? Register Below:</div>
 			<br />
-			<Link to='/registration' className='registration'>
+			<Link to='/registration' className='registration hvr-grow'>
 				Register
 			</Link>
 		</div>

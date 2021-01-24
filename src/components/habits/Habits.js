@@ -103,7 +103,7 @@ const Habits = ({ loggedIn }) => {
 				<label htmlFor='date'>Enter the date(YYYY-MM-DD): </label>
 				<input id='date' onChange={handleChange} value={formState.date} />
 				<br />
-				<button type='submit'>Submit</button>
+				<button type='submit' className='hvr-grow'>Submit</button>
 			</form>
 			<div>
 				Record of Habits:
@@ -111,7 +111,7 @@ const Habits = ({ loggedIn }) => {
 				<ul>
 					{habits.map((habit) => (
 						<Link to={`/habits/${habit.id}`} key={habit.id}>
-							<h2 key={habit.id}>{habit.date}</h2>
+							<h2 key={habit.id} className='hvr-grow'>{habit.date}</h2>
 						</Link>
 					))}
 				</ul>

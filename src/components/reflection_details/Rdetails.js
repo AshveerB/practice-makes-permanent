@@ -69,10 +69,10 @@ const Rdetails = ({ loggedIn, match }) => {
 				<label htmlFor='date' className='reflectionUpdateDateLabel'>Enter the date(YYYY-MM-DD): </label>
 				<input id='date' onChange={handleChange} value={reflection.date} className='reflectionUpdateDateInput'/>
 				<br />
-				<button type='submit' className='reflectionUpdateSubmit'>Update</button>
+				<button type='submit' className='reflectionUpdateSubmit hvr-grow'>Update</button>
 			</form>
 			<div>
-				<button onClick={handleDelete} className='reflectionDelete'>Delete</button>
+				<button onClick={handleDelete} className='reflectionDelete hvr-grow'>Delete</button>
 			</div>
 		</div>
 	);
