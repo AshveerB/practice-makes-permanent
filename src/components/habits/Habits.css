@@ -10,6 +10,12 @@ div {
     font-size: 20px;
 }
 
+.habitsList {
+  display: flex;
+  justify-content: space-evenly;
+  width: 300px;
+}
+
 .hvr-grow {
   display: inline-block;
   vertical-align: middle;

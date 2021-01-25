@@ -161,7 +161,7 @@ const Habits = ({ loggedIn }) => {
 				<ul>
 					{habits.map((habit) => (
 						<Link to={`/habits/${habit.id}`} key={habit.id}>
-							<h2 key={habit.id} className='habitsLinks hvr-grow'>
+							<h2 key={habit.id} className='habitsList hvr-grow'>
 								{habit.date}
 							</h2>
 						</Link>
