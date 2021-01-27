@@ -7,7 +7,6 @@ import Goals from './components/goals/Goals';
 import Reflection from './components/reflection/Reflection';
 import Login from './components/login/Login';
 import Registration from './components/registration/Registration';
-import Header from './components/header/Header';
 import Hdetails from './components/habit_details/Hdetails';
 import Gdetails from './components/goal_details/Gdetails';
 import Rdetails from './components/reflection_details/Rdetails';
@@ -23,7 +22,6 @@ function App() {
 	};
 	return (
 		<div className='App'>
-			<Header />
 			<Navigation
 				loggedIn={loggedIn}
 				setLoggedIn={setLoggedIn}

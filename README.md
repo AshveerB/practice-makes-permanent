@@ -20,6 +20,11 @@ A personal habit tracker that will enable user to make changes in their lives th
 1. Fork and Clone
 2. Install Dependencies
 
+## Bugs
+
+1. Update button needs to clicked twoce to work
+2. Redirects
+
 ## User Stories
 
 1. As a user I would like to know why we are tracking the specific habit so I am motivated to accomplish my goal.
