@@ -76,101 +76,103 @@ const Gdetails = ({ loggedIn, match }) => {
 			<div className='goalsDetailTravel'>Places traveled: {goal?.travel}</div>
 			<br />
 			<div className='goalsDetailUpdate'>Update:</div>
-			<form onSubmit={handleSubmit}>
-				<label htmlFor='sleep' className='goalsUpdateSleepLabel'>
-					Enter amount of time for sleep:{' '}
-				</label>
-				<input
-					id='sleep'
-					onChange={handleChange}
-					value={goal.sleep}
-					className='goalsUpdateSleepInput'
-				/>
-				<br />
-				<label htmlFor='water' className='goalsUpdateWaterLabel'>
-					Enter amount of water consumed:{' '}
-				</label>
-				<input
-					id='water'
-					onChange={handleChange}
-					value={goal.water}
-					className='goalsUpdateWaterInput'
-				/>
-				<br />
-				<label htmlFor='exercise' className='goalsUpdateExerciseLabel'>
-					Enter the amount of time for exercise:{' '}
-				</label>
-				<input
-					id='exercise'
-					onChange={handleChange}
-					value={goal.exercise}
-					className='goalsUpdateExerciseInput'
-				/>
-				<br />
-				<label htmlFor='calories' className='goalsUpdateCaloriesLabel'>
-					Enter the amount of calories consumed:{' '}
-				</label>
-				<input
-					id='calories'
-					onChange={handleChange}
-					value={goal.calories}
-					className='goalsUpdateCaloriesInput'
-				/>
-				<br />
-				<label htmlFor='learning' className='goalsUpdateLearningLabel'>
-					Enter amount of time for learning:{' '}
-				</label>
-				<input
-					id='learning'
-					onChange={handleChange}
-					value={goal.learning}
-					className='goalsUpdateLearningInput'
-				/>
-				<br />
-				<label htmlFor='earning' className='goalsUpdateEarningLabel'>
-					Enter amount of money earned:{' '}
-				</label>
-				<input
-					id='earning'
-					onChange={handleChange}
-					value={goal.earning}
-					className='goalsUpdateEarningInput'
-				/>
-				<br />
-				<label htmlFor='spending' className='goalsUpdateSpendingLabel'>
-					Enter amount of money spent:{' '}
-				</label>
-				<input
-					id='spending'
-					onChange={handleChange}
-					value={goal.spending}
-					className='goalsUpdateSpendingInput'
-				/>
-				<br />
-				<label htmlFor='travel' className='goalsUpdateTravelLabel'>
-					Enter the amount of time traveling:{' '}
-				</label>
-				<input
-					id='travel'
-					onChange={handleChange}
-					value={goal.travel}
-					className='goalsUpdateTraveInput'
-				/>
-				<br />
-				<label htmlFor='date' className='goalsUpdateDateLabel'>
-					Enter the date(YYYY-MM-DD):{' '}
-				</label>
-				<input
-					id='date'
-					onChange={handleChange}
-					value={goal.date}
-					className='goalsUpdateDateInput'
-				/>
-				<br />
-				<button type='submit' className='goalsUpdateFormSubmit hvr-grow'>
-					Update
-				</button>
-			</form>
+			<div className='goalFormContainer'>
+				<form onSubmit={handleSubmit} className='goalsForm'>
+					<label htmlFor='sleep' className='goalsUpdateSleepLabel'>
+						Enter amount of time for sleep:{' '}
+					</label>
+					<input
+						id='sleep'
+						onChange={handleChange}
+						value={goal.sleep}
+						className='goalsUpdateSleepInput'
+					/>
+					<br />
+					<label htmlFor='water' className='goalsUpdateWaterLabel'>
+						Enter amount of water consumed:{' '}
+					</label>
+					<input
+						id='water'
+						onChange={handleChange}
+						value={goal.water}
+						className='goalsUpdateWaterInput'
+					/>
+					<br />
+					<label htmlFor='exercise' className='goalsUpdateExerciseLabel'>
+						Enter the amount of time for exercise:{' '}
+					</label>
+					<input
+						id='exercise'
+						onChange={handleChange}
+						value={goal.exercise}
+						className='goalsUpdateExerciseInput'
+					/>
+					<br />
+					<label htmlFor='calories' className='goalsUpdateCaloriesLabel'>
+						Enter the amount of calories consumed:{' '}
+					</label>
+					<input
+						id='calories'
+						onChange={handleChange}
+						value={goal.calories}
+						className='goalsUpdateCaloriesInput'
+					/>
+					<br />
+					<label htmlFor='learning' className='goalsUpdateLearningLabel'>
+						Enter amount of time for learning:{' '}
+					</label>
+					<input
+						id='learning'
+						onChange={handleChange}
+						value={goal.learning}
+						className='goalsUpdateLearningInput'
+					/>
+					<br />
+					<label htmlFor='earning' className='goalsUpdateEarningLabel'>
+						Enter amount of money earned:{' '}
+					</label>
+					<input
+						id='earning'
+						onChange={handleChange}
+						value={goal.earning}
+						className='goalsUpdateEarningInput'
+					/>
+					<br />
+					<label htmlFor='spending' className='goalsUpdateSpendingLabel'>
+						Enter amount of money spent:{' '}
+					</label>
+					<input
+						id='spending'
+						onChange={handleChange}
+						value={goal.spending}
+						className='goalsUpdateSpendingInput'
+					/>
+					<br />
+					<label htmlFor='travel' className='goalsUpdateTravelLabel'>
+						Enter the amount of time traveling:{' '}
+					</label>
+					<input
+						id='travel'
+						onChange={handleChange}
+						value={goal.travel}
+						className='goalsUpdateTraveInput'
+					/>
+					<br />
+					<label htmlFor='date' className='goalsUpdateDateLabel'>
+						Enter the date(YYYY-MM-DD):{' '}
+					</label>
+					<input
+						id='date'
+						onChange={handleChange}
+						value={goal.date}
+						className='goalsUpdateDateInput'
+					/>
+					<br />
+					<button type='submit' className='goalsUpdateFormSubmit hvr-grow'>
+						Update
+					</button>
+				</form>
+			</div>
 			<div>
 				<button onClick={handleDelete} className='goalDetailDelete hvr-grow'>
 					Delete

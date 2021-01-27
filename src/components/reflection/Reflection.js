@@ -43,34 +43,36 @@ const Reflection = ({ loggedIn }) => {
 	return (
 		<div style={{ display: loggedIn ? 'block' : 'none' }}>
 			<div className='reflectionTitle'>Reflection</div>
-			<form onSubmit={handleSubmit}>
-				<label htmlFor='reflection' className='reflectionLabel'>
-					Enter Reflection:{' '}
-				</label>
-				<input
-					type='textarea'
-					id='reflection'
-					onChange={handleChange}
-					value={formState.reflection}
-					placeholder='Enter Thoughts'
-					className='reflectioninput'
-				/>
-				<br />
-				<label htmlFor='date' className='reflectionDateLabel'>
-					Enter the date(YYYY-MM-DD):{' '}
-				</label>
-				<input
-					id='date'
-					onChange={handleChange}
-					value={formState.date}
-					placeholder='YYYY-MM-DD'
-					className='reflectionDateInput'
-				/>
-				<br />
-				<button type='submit' className='reflectionFormSubmit hvr-grow'>
-					Submit
-				</button>
-			</form>
+			<div className='reflectionFormContainer'>
+				<form onSubmit={handleSubmit} className='reflectionForm'>
+					<label htmlFor='reflection' className='reflectionLabel'>
+						Enter Reflection:{' '}
+					</label>
+					<input
+						type='textarea'
+						id='reflection'
+						onChange={handleChange}
+						value={formState.reflection}
+						placeholder='Enter Thoughts'
+						className='reflectioninput'
+					/>
+					<br />
+					<label htmlFor='date' className='reflectionDateLabel'>
+						Enter the date(YYYY-MM-DD):{' '}
+					</label>
+					<input
+						id='date'
+						onChange={handleChange}
+						value={formState.date}
+						placeholder='YYYY-MM-DD'
+						className='reflectionDateInput'
+					/>
+					<br />
+					<button type='submit' className='reflectionFormSubmit hvr-grow'>
+						Submit
+					</button>
+				</form>
+			</div>
 			<div>
 				<div className='reflectionRecords'>Record of Reflections:</div>
 				<br />

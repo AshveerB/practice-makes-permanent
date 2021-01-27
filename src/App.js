@@ -5,7 +5,6 @@ import Home from './components/home/Home';
 import Habits from './components/habits/Habits';
 import Goals from './components/goals/Goals';
 import Reflection from './components/reflection/Reflection';
-import Analysis from './components/analysis/Analysis';
 import Login from './components/login/Login';
 import Registration from './components/registration/Registration';
 import Header from './components/header/Header';
@@ -52,13 +51,6 @@ function App() {
 					exact
 					render={() => {
 						return <Reflection loggedIn={loggedIn} />;
-					}}
-				/>
-				<Route
-					path='/analysis'
-					exact
-					render={() => {
-						return <Analysis loggedIn={loggedIn} />;
 					}}
 				/>
 				<Route

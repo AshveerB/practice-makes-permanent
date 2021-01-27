@@ -50,110 +50,112 @@ const Goals = ({ loggedIn }) => {
 	return (
 		<div style={{ display: loggedIn ? 'block' : 'none' }}>
 			<div className='goalsTitle'>Goals</div>
-			<form onSubmit={handleSubmit}>
-				<label htmlFor='sleep' className='goalsSleepLabel'>
-					Enter amount of time for sleep:{' '}
-				</label>
-				<input
-					id='sleep'
-					onChange={handleChange}
-					value={formState.sleep}
-					placeholder='Sleep'
-					className='goalsSleepInput'
-				/>
-				<br />
-				<label htmlFor='water' className='goalsWaterLabel'>
-					Enter amount of water consumed:{' '}
-				</label>
-				<input
-					id='water'
-					onChange={handleChange}
-					value={formState.water}
-					placeholder='Water'
-					className='goalsWaterInput'
-				/>
-				<br />
-				<label htmlFor='exercise' className='goalsExerciseLabel'>
-					Enter the amount of time for exercise:{' '}
-				</label>
-				<input
-					id='exercise'
-					onChange={handleChange}
-					value={formState.exercise}
-					placeholder='Exercise'
-					className='goalsExerciseInput'
-				/>
-				<br />
-				<label htmlFor='calories' className='goalsCaloriesLabel'>
-					Enter the amount of calories consumed:{' '}
-				</label>
-				<input
-					id='calories'
-					onChange={handleChange}
-					value={formState.calories}
-					placeholder='Calories'
-					className='goalsCaloriesInput'
-				/>
-				<br />
-				<label htmlFor='learning' className='goalsLearningLabel'>
-					Enter amount of time for learning:{' '}
-				</label>
-				<input
-					id='learning'
-					onChange={handleChange}
-					value={formState.learning}
-					placeholder='Learning'
-					className='goalsLearningInput'
-				/>
-				<br />
-				<label htmlFor='earning' className='goalsEarningLabel'>
-					Enter amount of money earned:{' '}
-				</label>
-				<input
-					id='earning'
-					onChange={handleChange}
-					value={formState.earning}
-					placeholder='Earning'
-					className='goalsEarningInput'
-				/>
-				<br />
-				<label htmlFor='spending' className='goalsSpendingLabel'>
-					Enter amount of money spent:{' '}
-				</label>
-				<input
-					id='spending'
-					onChange={handleChange}
-					value={formState.spending}
-					placeholder='Spending'
-					className='goalsSpendingInput'
-				/>
-				<br />
-				<label htmlFor='travel' className='goalsTravelLabel'>
-					Enter the amount of time traveling:{' '}
-				</label>
-				<input
-					id='travel'
-					onChange={handleChange}
-					value={formState.travel}
-					placeholder='Travel'
-					className='goalsTravelInput'
-				/>
-				<br />
-				<label htmlFor='date' className='goalsDateLabel'>
-					Enter the date(YYYY-MM-DD):{' '}
-				</label>
-				<input
-					id='date'
-					onChange={handleChange}
-					value={formState.date}
-					placeholder='YYYY-MM-DD'
-					className='goalsDateInput'
-				/>
-				<br />
-				<button type='submit' className='goalsFormSubmit hvr-grow'>
-					Submit
-				</button>
-			</form>
+			<div className='goalFormContainer'>
+				<form onSubmit={handleSubmit} className='goalsForm'>
+					<label htmlFor='sleep' className='goalsSleepLabel'>
+						Enter amount of time for sleep:{' '}
+					</label>
+					<input
+						id='sleep'
+						onChange={handleChange}
+						value={formState.sleep}
+						placeholder='Sleep'
+						className='goalsSleepInput'
+					/>
+					<br />
+					<label htmlFor='water' className='goalsWaterLabel'>
+						Enter amount of water consumed:{' '}
+					</label>
+					<input
+						id='water'
+						onChange={handleChange}
+						value={formState.water}
+						placeholder='Water'
+						className='goalsWaterInput'
+					/>
+					<br />
+					<label htmlFor='exercise' className='goalsExerciseLabel'>
+						Enter the amount of time for exercise:{' '}
+					</label>
+					<input
+						id='exercise'
+						onChange={handleChange}
+						value={formState.exercise}
+						placeholder='Exercise'
+						className='goalsExerciseInput'
+					/>
+					<br />
+					<label htmlFor='calories' className='goalsCaloriesLabel'>
+						Enter the amount of calories consumed:{' '}
+					</label>
+					<input
+						id='calories'
+						onChange={handleChange}
+						value={formState.calories}
+						placeholder='Calories'
+						className='goalsCaloriesInput'
+					/>
+					<br />
+					<label htmlFor='learning' className='goalsLearningLabel'>
+						Enter amount of time for learning:{' '}
+					</label>
+					<input
+						id='learning'
+						onChange={handleChange}
+						value={formState.learning}
+						placeholder='Learning'
+						className='goalsLearningInput'
+					/>
+					<br />
+					<label htmlFor='earning' className='goalsEarningLabel'>
+						Enter amount of money earned:{' '}
+					</label>
+					<input
+						id='earning'
+						onChange={handleChange}
+						value={formState.earning}
+						placeholder='Earning'
+						className='goalsEarningInput'
+					/>
+					<br />
+					<label htmlFor='spending' className='goalsSpendingLabel'>
+						Enter amount of money spent:{' '}
+					</label>
+					<input
+						id='spending'
+						onChange={handleChange}
+						value={formState.spending}
+						placeholder='Spending'
+						className='goalsSpendingInput'
+					/>
+					<br />
+					<label htmlFor='travel' className='goalsTravelLabel'>
+						Enter the amount of time traveling:{' '}
+					</label>
+					<input
+						id='travel'
+						onChange={handleChange}
+						value={formState.travel}
+						placeholder='Travel'
+						className='goalsTravelInput'
+					/>
+					<br />
+					<label htmlFor='date' className='goalsDateLabel'>
+						Enter the date(YYYY-MM-DD):{' '}
+					</label>
+					<input
+						id='date'
+						onChange={handleChange}
+						value={formState.date}
+						placeholder='YYYY-MM-DD'
+						className='goalsDateInput'
+					/>
+					<br />
+					<button type='submit' className='goalsFormSubmit hvr-grow'>
+						Submit
+					</button>
+				</form>
+			</div>
 			<div>
 				<div className='goalsRecord'>Record of Goals:</div>
 				<br />

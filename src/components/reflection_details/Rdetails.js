@@ -58,32 +58,34 @@ const Rdetails = ({ loggedIn, match }) => {
 			</div>
 			<br />
 			<div className='reflectionDetailUpdate'>UPDATE:</div>
-			<form onSubmit={handleSubmit}>
-				<label htmlFor='reflection' className='reflectionUpdateLabel'>
-					Enter Reflection:{' '}
-				</label>
-				<input
-					type='textarea'
-					id='reflection'
-					onChange={handleChange}
-					value={reflection.reflection}
-					className='reflectionUpdateInput'
-				/>
-				<br />
-				<label htmlFor='date' className='reflectionUpdateDateLabel'>
-					Enter the date(YYYY-MM-DD):{' '}
-				</label>
-				<input
-					id='date'
-					onChange={handleChange}
-					value={reflection.date}
-					className='reflectionUpdateDateInput'
-				/>
-				<br />
-				<button type='submit' className='reflectionUpdateFormSubmit hvr-grow'>
-					Update
-				</button>
-			</form>
+			<div className='reflectionFormContainer'>
+				<form onSubmit={handleSubmit} className='reflectionForm'>
+					<label htmlFor='reflection' className='reflectionUpdateLabel'>
+						Enter Reflection:{' '}
+					</label>
+					<input
+						type='textarea'
+						id='reflection'
+						onChange={handleChange}
+						value={reflection.reflection}
+						className='reflectionUpdateInput'
+					/>
+					<br />
+					<label htmlFor='date' className='reflectionUpdateDateLabel'>
+						Enter the date(YYYY-MM-DD):{' '}
+					</label>
+					<input
+						id='date'
+						onChange={handleChange}
+						value={reflection.date}
+						className='reflectionUpdateDateInput'
+					/>
+					<br />
+					<button type='submit' className='reflectionUpdateFormSubmit hvr-grow'>
+						Update
+					</button>
+				</form>
+			</div>
 			<div>
 				<button
 					onClick={handleDelete}

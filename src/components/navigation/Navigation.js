@@ -4,7 +4,7 @@ import './Navigation.css';
 
 const Navigation = ({ loggedIn, handleLogout }) => {
 	return (
-		<div>
+		<nav className='navbar'>
 			<span className='hvr-grow'>
 				<Link to='/home'>Home</Link>
 			</span>
@@ -18,13 +18,10 @@ const Navigation = ({ loggedIn, handleLogout }) => {
 				<Link to='/reflections'>Reflections</Link>
 			</span>
 			<span className='hvr-grow'>
-				<Link to='/analysis'>Analysis</Link>
-			</span>
-			<span className='hvr-grow'>
 				{!loggedIn && <Link to='/login'>Login</Link>}
 				{loggedIn && <button onClick={handleLogout}>Logout</button>}
 			</span>
-		</div>
+		</nav>
 	);
 };
 
